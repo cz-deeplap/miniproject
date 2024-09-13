@@ -28,7 +28,8 @@ if(isset($_POST['update'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    
+    <div class="container-1">
     <h1 class="" style="font-size: 34px;">Update Page</h1>
         <hr>
         <?php

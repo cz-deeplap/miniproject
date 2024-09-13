@@ -14,7 +14,7 @@ $sql = $fetchdata->fetchdata();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="container-1">
     <h1 class="information-heading">show user</h1>
         <hr>
         <table id="mytable" class="table" style="text-align: center;">

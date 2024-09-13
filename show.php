@@ -14,7 +14,7 @@ $sql = $fetchdata->fetchdata();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="container-1">
     <h1 class="information-heading">manage user</h1>
         <hr>
         <table id="mytable" class="table" style="text-align: center;">
@@ -41,8 +41,8 @@ $sql = $fetchdata->fetchdata();
                         <td><?php echo $row['phonenumber']; ?></td>
                         <td><?php echo $row['address']; ?></td>
                         <td><?php echo $row['postingdate']; ?></td>
-                        <td><a href="update.php?id=<?php echo $row['id']; ?>p=update" class="btn btn-primary">Edit</a></td>
-                        <td><a href="delete.php?del=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
+                        <td><a href="index.php?p=update&id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a></td>
+                        <td><a href="index.php?p=delete&del=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
                     </tr>
                 <?php } ?>
             </tbody>
