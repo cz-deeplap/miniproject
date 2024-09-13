@@ -18,7 +18,7 @@ $sql = $fetchdata->fetchdata();
     <h1 class="information-heading">manage user</h1>
         <hr>
         <table id="mytable" class="table" style="text-align: center;">
-            <thead>
+            <thead class="table-dark">
                 <tr>
                     <th>#</th>
                     <th>Firstname</th>
@@ -27,8 +27,7 @@ $sql = $fetchdata->fetchdata();
                     <th>Phone number</th>
                     <th>Address</th>
                     <th>Posting Date</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>manage</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,10 +38,14 @@ $sql = $fetchdata->fetchdata();
                         <td><?php echo $row['lastname']; ?></td>
                         <td><?php echo $row['email']; ?></td>
                         <td><?php echo $row['phonenumber']; ?></td>
-                        <td><?php echo $row['address']; ?></td>
+                        <td><?php echo $row['address']; ?></td> 
                         <td><?php echo $row['postingdate']; ?></td>
-                        <td><a href="index.php?p=update&id=<?php echo $row['id']; ?>" class="btn btn-primary">Edit</a></td>
-                        <td><a href="index.php?p=delete&del=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a></td>
+                        <td>
+                        <a href="index.php?p=update&id=<?php echo $row['id']; ?>" class="">
+                            <ion-icon name="create-outline" style="width: 20px; padding: 0 0px 0 20px; color: #0042dd;;"></ion-icon></a>
+                        <a href="index.php?p=delete&del=<?php echo $row['id']; ?>" class="">
+                            <ion-icon name="trash-outline" style="width: 20px; padding: 0 15px 0 13px; color: #ff0000ab"></ion-icon></a>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>

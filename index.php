@@ -134,7 +134,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.php?p=show" class="nav-link ">
+                <a href="index.php?p=manageuser" class="nav-link ">
                 <ion-icon name="people"></ion-icon>
                   <p>Manage Users</p>
                 </a>

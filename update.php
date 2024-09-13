@@ -66,7 +66,7 @@ if(isset($_POST['update'])) {
             }
             ?>
             <button type="submit" name="update" class="btn btn-success">Update</button>
-            <a href="index.php?p=showuser" class="btn btn-primary">Back to Insert Page</a>
+            <a href="index.php?p=manageuser" class="btn btn-primary">Back to Manage User</a>
         </form>
     </div>
 

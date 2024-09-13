@@ -17,28 +17,28 @@ $sql = $fetchdata->fetchdata();
     <div class="container-1">
     <h1 class="information-heading">show user</h1>
         <hr>
-        <table id="mytable" class="table" style="text-align: center;">
-            <thead>
-                <tr>
+        <table id="mytable" class="table">
+            <thead class="table-dark">
+                <tr style="text-align: center;">
                     <th>#</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Email</th>
                     <th>Phone number</th>
                     <th>Address</th>
-                    <th>Posting Date</th>
+                    <!-- <th>Posting Date</th> -->
                 </tr>
             </thead>
             <tbody>
                 <?php while ($row = mysqli_fetch_array($sql)) { ?>
-                    <tr>
+                    <tr style="text-align: center;">
                         <td><?php echo $row['id']; ?></td>
                         <td><?php echo $row['firstname']; ?></td>
                         <td><?php echo $row['lastname']; ?></td>
                         <td><?php echo $row['email']; ?></td>
                         <td><?php echo $row['phonenumber']; ?></td>
                         <td><?php echo $row['address']; ?></td>
-                        <td><?php echo $row['postingdate']; ?></td>
+                        <!-- <td><?php echo $row['postingdate']; ?></td> -->
                     </tr>
                 <?php } ?>
             </tbody>

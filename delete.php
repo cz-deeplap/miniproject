@@ -9,7 +9,7 @@
 
         if ($sql) {
             echo "<script>alert('Record Deleted Successfully!');</script>";
-            echo "<script>window.location.href='index.php?p=show'</script>";
+            echo "<script>window.location.href='index.php'</script>";
         }
     }
  
