@@ -1,10 +1,10 @@
 <?php
-include_once('functions.php');
+include_once('dashboard_user/functionsuser.php');
 $fetchdata = new DB_con();
 $sql = $fetchdata->fetchdata();
 ?>
-<!-- test -->
-<!DOCTYPE html> 
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,30 +15,41 @@ $sql = $fetchdata->fetchdata();
 </head>
 <body>
     <div class="container-1">
-    <h1 class="information-heading">show user</h1>
-        <hr>
-        <table id="mytable" class="table">
+    <h1 class="information-heading">manage user</h1>
+        
+        <table id="mytable" class="table" style="text-align: center;">
             <thead class="table-dark">
-                <tr style="text-align: center;">
+                <tr>
                     <th>#</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Email</th>
                     <th>Phone number</th>
                     <th>Address</th>
-                    <!-- <th>Posting Date</th> -->
+                    <th>Posting Date</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Manage</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while ($row = mysqli_fetch_array($sql)) { ?>
-                    <tr style="text-align: center;">
+                    <tr>
                         <td><?php echo $row['id']; ?></td>
                         <td><?php echo $row['firstname']; ?></td>
                         <td><?php echo $row['lastname']; ?></td>
                         <td><?php echo $row['email']; ?></td>
                         <td><?php echo $row['phonenumber']; ?></td>
-                        <td><?php echo $row['address']; ?></td>
-                        <!-- <td><?php echo $row['postingdate']; ?></td> -->
+                        <td><?php echo $row['address']; ?></td> 
+                        <td><?php echo $row['postingdate']; ?></td>
+                        <td><?php echo $row['username']; ?></td>
+                        <td><?php echo $row['password']; ?></td>
+                        <td>
+                        <a href="index.php?p=dashboard_user/updateuser&id=<?php echo $row['id']; ?>" class="">
+                            <ion-icon name="create-outline" style="width: 20px; padding: 0 0px 0 20px; color: #0042dd;;"></ion-icon></a>
+                        <a href="index.php?p=dashboard_user/deleteuser&del=<?php echo $row['id']; ?>" class="">
+                            <ion-icon name="trash-outline" style="width: 20px; padding: 0 15px 0 13px; color: #ff0000ab"></ion-icon></a>
+                        </td>
                     </tr>
                 <?php } ?>
             </tbody>

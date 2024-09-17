@@ -16,8 +16,8 @@
             }
         }
 
-        public function insert($firstname, $lastname, $email, $phonenumber, $address) {
-            $result = mysqli_query($this->dbcon, "INSERT INTO tblusers (firstname, lastname, email, phonenumber, address) VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$address')");
+        public function insert($firstname, $lastname, $email, $phonenumber, $address, $username , $password) {
+            $result = mysqli_query($this->dbcon, "INSERT INTO tblusers (firstname, lastname, email, phonenumber, address, username ,password) VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$address', '$username', '$password')");
             return $result;
         }
         
@@ -32,13 +32,15 @@
             return $result;
         }
 
-        public function update($firstname, $lastname, $email, $phonenumber, $address ,$userid) {
+        public function update($firstname, $lastname, $email, $phonenumber, $address ,$userid ,$username , $password) {
             $result = mysqli_query($this->dbcon, "UPDATE tblusers SET 
             firstname = '$firstname', 
             lastname = '$lastname',
             email = '$email',
             phonenumber = '$phonenumber',
-            address = '$address'    
+            address = '$address',
+            username = '$username',
+            password = '$password'    
             WHERE id = '$userid'
             ");
             return $result; 
@@ -49,6 +51,8 @@
             $deleterecord = mysqli_query($this->dbcon, "DELETE FROM tblusers  WHERE id = '$userid'");
             return $deleterecord;
         }
+
+        
     }   
 
 

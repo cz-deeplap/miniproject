@@ -1,5 +1,5 @@
 <?php
-include_once('functions.php');
+include_once('dashboard_user/functionsuser.php');
 
 $insertdata = new DB_con();
 
@@ -9,15 +9,17 @@ if (isset($_POST['insert'])) {
     $email = $_POST['email'];
     $phonenumber = $_POST['phonenumber'];
     $address = $_POST['address'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-    $sql = $insertdata->insert($fname, $lname, $email, $phonenumber, $address);
+    $sql = $insertdata->insert($fname, $lname, $email, $phonenumber, $address ,$username ,$password);
 
     if ($sql) {
         echo "<script>alert('Record Inserted Successfully!');</script>";
         echo "<script>window.location.href='index.php'</script>";
     } else {
         echo "<script>alert('Something went wrong! Please try again!');</script>";
-        echo "<script>window.location.href='index.php?p=insert'</script>";
+        echo "<script>window.location.href='index.php?p=dashboard_user/insertuser'</script>";
     }
 }
 ?>
@@ -34,7 +36,7 @@ if (isset($_POST['insert'])) {
 <body>
     <div class="container-1">
         <h1 class="information-heading-1">Insert user</h1>
-        <hr>
+        
         <form action="" method="post">
             <div class="mb-3">
                 <label for="firstname" class="form-label">Firstname</label>
@@ -57,7 +59,6 @@ if (isset($_POST['insert'])) {
                 <textarea name="address" cols="30" rows="10" class="form-control" style="height: 130px;" required></textarea>
             </div>
             <button type="submit" name="insert" class="btn btn-success">Insert Data</button>
-            <a href="index.php?p=show" class="btn btn-primary">Back to Insert Page</a>
         </form>
     </div>
 

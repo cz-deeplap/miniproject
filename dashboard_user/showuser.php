@@ -1,10 +1,10 @@
 <?php
-include_once('functions.php');
+include_once('dashboard_user/functionsuser.php');
 $fetchdata = new DB_con();
 $sql = $fetchdata->fetchdata();
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,37 +15,32 @@ $sql = $fetchdata->fetchdata();
 </head>
 <body>
     <div class="container-1">
-    <h1 class="information-heading">manage user</h1>
-        <hr>
-        <table id="mytable" class="table" style="text-align: center;">
+    <h1 class="information-heading">show user</h1>
+       
+        <table id="mytable" class="table">
             <thead class="table-dark">
-                <tr>
+                <tr style="text-align: center;">
                     <th>#</th>
+                    <th>Username</th>
                     <th>Firstname</th>
                     <th>Lastname</th>
                     <th>Email</th>
                     <th>Phone number</th>
                     <th>Address</th>
-                    <th>Posting Date</th>
-                    <th>manage</th>
+                    <!-- <th>Posting Date</th> -->
                 </tr>
             </thead>
             <tbody>
                 <?php while ($row = mysqli_fetch_array($sql)) { ?>
-                    <tr>
+                    <tr style="text-align: center;">
                         <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['username']; ?></td>
                         <td><?php echo $row['firstname']; ?></td>
                         <td><?php echo $row['lastname']; ?></td>
                         <td><?php echo $row['email']; ?></td>
                         <td><?php echo $row['phonenumber']; ?></td>
-                        <td><?php echo $row['address']; ?></td> 
-                        <td><?php echo $row['postingdate']; ?></td>
-                        <td>
-                        <a href="index.php?p=update&id=<?php echo $row['id']; ?>" class="">
-                            <ion-icon name="create-outline" style="width: 20px; padding: 0 0px 0 20px; color: #0042dd;;"></ion-icon></a>
-                        <a href="index.php?p=delete&del=<?php echo $row['id']; ?>" class="">
-                            <ion-icon name="trash-outline" style="width: 20px; padding: 0 15px 0 13px; color: #ff0000ab"></ion-icon></a>
-                        </td>
+                        <td><?php echo $row['address']; ?></td>
+                        <!-- <td><?php echo $row['postingdate']; ?></td> -->
                     </tr>
                 <?php } ?>
             </tbody>

@@ -1,6 +1,6 @@
 <?php
 
-    include_once('functions.php');
+    include_once('dashboard_user/functionsuser.php');
 
     if (isset($_GET['del'])) {
         $userid = $_GET['del'];

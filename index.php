@@ -96,7 +96,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block" style="text-decoration: none;" >Athip Praneewat</a>
+          <a href="#" class="d-block" style="text-decoration: none;" >User : <?php echo $_SESSION['sess_username']; ?></a>
         </div>
       </div>
 
@@ -120,6 +120,12 @@
                   <p>Show Users</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="index.php?p=dashboard_pro/showpro" class="nav-link ">
+                <ion-icon name="bag-outline"></ion-icon>
+                  <p>Show Product</p>
+                </a>
+              </li>
             </ul>
           </li>
 
@@ -134,15 +140,23 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.php?p=manageuser" class="nav-link ">
-                <ion-icon name="people"></ion-icon>
+                <a href="index.php?p=dashboard_user/manageuser" class="nav-link ">
+                <ion-icon name="person"></ion-icon>
                   <p>Manage Users</p>
                 </a>
               </li>
+
               <li class="nav-item">
-                <a href="index.php?p=insert" class="nav-link ">
-                <ion-icon name="add-circle-outline"></ion-icon>
-                  <p>Insert User</p>
+                <a href="index.php?p=dashboard_pro/managepro" class="nav-link ">
+                <ion-icon name="bag"></ion-icon>
+                  <p>Manage Products</p>
+                </a>
+              </li>
+          
+              <li class="nav-item">
+                <a href="index.php?p=dashboard_pro/insertpro" class="nav-link ">
+                <ion-icon name="bag-add"></ion-icon>
+                  <p>Insert Products</p>
                 </a>
               </li>
             </ul>
@@ -161,11 +175,11 @@
   <div class="content-wrapper" style="min-height: 633.4px;padding: 10px;">
     
      
-    <?php
+    <?php 
       if  (isset($_REQUEST['p'])) {
         include $_REQUEST['p'] . ".php";
     } else {
-      include "showuser.php";
+      include "dashboard_user/showuser.php";
     }
     ?>
 
