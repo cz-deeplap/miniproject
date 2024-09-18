@@ -13,16 +13,18 @@
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="dist/css/style.css">
+  <link rel="stylesheet" href="styles.css">
+
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <a href="#"><p class="namelogo">iT Store</p></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
-    <div class="card-body login-card-body">
+  <div class="card-body login-card-body">
+  <div class="background-blur"></div>
       <p class="login-box-msg">Sign in to start your session</p>
 
       <form action="api/api_login.php" method="post" id="frm_login">
@@ -44,16 +46,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
           <!-- /.col -->
-          <div class="col-4">
+          <div class="col-8">
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
           </div>
           <!-- /.col -->

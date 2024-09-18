@@ -30,12 +30,13 @@ if(isset($_POST['update'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update</title>
+    <link href="styles.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container-1">
-        <h1 class="" style="font-size: 34px;">Update Page</h1>
-        
+        <h1 class="information-heading" style="font-size: 34px;">Update Page</h1>
+        <hr>
         <?php
             $userid = $_GET['id']; // รับ ID จาก query string
             $updateuser = new DB_con();

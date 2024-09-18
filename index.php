@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard</title>
+  <title>iTSTORE</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -54,27 +54,28 @@
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="https://discord.com" target="_blank">
-                    <ion-icon name="logo-discord"></ion-icon>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://facebook.com" target="_blank">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://instagram.com" target="_blank">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://github.com" target="_blank">
-                    <ion-icon name="logo-github"></ion-icon>
-                </a>
-            </li>
-        </ul>
+    <li class="nav-item">
+        <a class="nav-link" href="https://discord.com" target="_blank">
+            <img src="pic/discord.png" alt="Discord" style="width: 24px; height: 24px;">
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://www.facebook.com/athip.praneewat" target="_blank">
+            <img src="pic/facebook.png" alt="Facebook" style="width: 24px; height: 24px;">
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://www.instagram.com/czatxip_/" target="_blank">
+            <img src="pic/instagram.png" alt="Instagram" style="width: 24px; height: 24px;">
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://github.com/cz-deeplap" target="_blank">
+            <img src="pic/github.png" alt="GitHub" style="width: 24px; height: 24px;">
+        </a>
+    </li>
+</ul>
+
     </nav>
     <!-- /.navbar -->
 
@@ -85,7 +86,7 @@
     <!-- Brand Logo -->
     <a style="text-decoration: none;" href="#" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light namelogo">it store</span>
     </a>
 
     <!-- Sidebar -->
@@ -93,10 +94,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="pic/admin.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block" style="text-decoration: none;" >User : <?php echo $_SESSION['sess_username']; ?></a>
+          <a href="#" class="d-block" style="text-decoration: none;" >Admin : <?php echo $_SESSION['sess_username']; ?></a>
         </div>
       </div>
 

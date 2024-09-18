@@ -16,19 +16,19 @@ $sql = $fetchdata->fetchdata();
 <body>
     <div class="container-1">
         <h1 class="information-heading">Show Products</h1>
+        <hr>
         <div class="row">
             <?php while ($row = mysqli_fetch_array($sql)) { ?>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <!-- Display product image -->
-                        <!-- <img src="<?php echo htmlspecialchars($row['image']); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($row['name']); ?>"> -->
-                        <img src="images1.jpg" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Nameproduct : <?php echo htmlspecialchars($row['name']); ?></h5>
-                            <p class="card-text">Price : <?php echo htmlspecialchars($row['price']); ?> ฿</p>
-                        </div>
-                    </div>
-                </div>
+                <div class="col-md-3 mb-4"> <!-- เปลี่ยนจาก col-md-4 เป็น col-md-3 -->
+    <div class="card" style="width: 100%; height: auto;"> <!-- ใช้ style เพื่อลดขนาด -->
+        <img src="pic/propic/itstore.png" class="card-img-top" alt="Product Image" style="max-height: 150px; object-fit: cover;"> <!-- ปรับความสูงของภาพ -->
+        <div class="card-body">
+            <h5 class="card-title" style="font-size: 1rem;">Product Name: <?php echo htmlspecialchars($row['name']); ?></h5> <!-- ปรับขนาดฟอนต์ -->
+            <p class="card-text" style="font-size: 0.875rem;">Price: <?php echo htmlspecialchars($row['price']); ?> ฿</p> <!-- ปรับขนาดฟอนต์ -->
+        </div>
+    </div>
+</div>
+
             <?php } ?>
         </div>
     </div>

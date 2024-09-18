@@ -36,7 +36,7 @@ if (isset($_POST['insert'])) {
 <body>
     <div class="container-1">
         <h1 class="information-heading-1">Insert user</h1>
-        
+        <hr>
         <form action="" method="post">
             <div class="mb-3">
                 <label for="firstname" class="form-label">Firstname</label>

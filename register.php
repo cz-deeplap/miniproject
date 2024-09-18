@@ -28,6 +28,7 @@ if (isset($_POST['insert'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Register</title>
     <!-- AdminLTE CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
@@ -37,7 +38,7 @@ if (isset($_POST['insert'])) {
 <body class="hold-transition register-page">
     <div class="register-box">
         <div class="register-logo">
-            <a href="#"><b>Admin</b>LTE</a>
+            <a href="#"><p class="namelogo">iT Store</p></a>
         </div>
 
         <div class="card">

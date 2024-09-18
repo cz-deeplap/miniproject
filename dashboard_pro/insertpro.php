@@ -6,17 +6,22 @@ $insertdata = new DB_con();
 if (isset($_POST['insert'])) {
     $name = $_POST['name'];
     $price = $_POST['price'];
+    $image = $_FILES['image']['name'];
+    $target = "pic/propic/" . basename($image);
 
-    $sql = $insertdata->insert($name, $price);
-
-    if ($sql) {
-        echo "<script>alert('Record Inserted Successfully!');</script>";
-        echo "<script>window.location.href='index.php?p=dashboard_pro/showpro'</script>";
+    // Upload image
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $sql = $insertdata->insert($name, $price, $image); // ส่ง $image เข้าไปด้วย
+        if ($sql) {
+            echo "<script>alert('Record Inserted Successfully!');</script>";
+        } else {
+            echo "<script>alert('Something went wrong! Please try again!');</script>";
+        }
     } else {
-        echo "<script>alert('Something went wrong! Please try again!');</script>";
-        echo "<script>window.location.href='index.php?p=dashboard_pro/insertpro'</script>";
+        echo "<script>alert('Failed to upload image!');</script>";
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +36,7 @@ if (isset($_POST['insert'])) {
 <body>
     <div class="container-1">
         <h1 class="information-heading-1">Insert Product</h1>
-        
+        <hr>
         <form action="" method="post">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>

@@ -16,7 +16,7 @@ $sql = $fetchdata->fetchdata();
 <body>
     <div class="container-1">
     <h1 class="information-heading">manage user</h1>
-        
+    <hr>
         <table id="mytable" class="table" style="text-align: center;">
             <thead class="table-dark">
                 <tr>
