@@ -15,7 +15,7 @@ $sql = $fetchdata->fetchdata();
 </head>
 <body>
     <div class="container-1">
-    <h1 class="information-heading">show user</h1>
+    <h1 class="information-heading">list user</h1>
     <hr>
         <table id="mytable" class="table">
             <thead class="table-dark">

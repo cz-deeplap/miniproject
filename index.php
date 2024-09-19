@@ -115,16 +115,16 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+            <li class="nav-item">
                 <a href="index.php" class="nav-link ">
-                <ion-icon name="people-outline"></ion-icon>
-                  <p>Show Users</p>
+                <ion-icon name="bag-outline"></ion-icon>
+                  <p>List Product</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?p=dashboard_pro/showpro" class="nav-link ">
-                <ion-icon name="bag-outline"></ion-icon>
-                  <p>Show Product</p>
+                <a href="index.php?p=dashboard_user/showuser" class="nav-link ">
+                <ion-icon name="people-outline"></ion-icon>
+                  <p>List Users</p>
                 </a>
               </li>
             </ul>
@@ -148,14 +148,14 @@
               </li>
 
               <li class="nav-item">
-                <a href="index.php?p=dashboard_pro/managepro" class="nav-link ">
+                <a href="index.php?p=dashboard_products/edit_products" class="nav-link ">
                 <ion-icon name="bag"></ion-icon>
                   <p>Manage Products</p>
                 </a>
               </li>
           
               <li class="nav-item">
-                <a href="index.php?p=dashboard_pro/insertpro" class="nav-link ">
+                <a href="index.php?p=dashboard_products/add_product" class="nav-link ">
                 <ion-icon name="bag-add"></ion-icon>
                   <p>Insert Products</p>
                 </a>
@@ -180,7 +180,7 @@
       if  (isset($_REQUEST['p'])) {
         include $_REQUEST['p'] . ".php";
     } else {
-      include "dashboard_user/showuser.php";
+      include "dashboard_products/list_products.php";
     }
     ?>
 

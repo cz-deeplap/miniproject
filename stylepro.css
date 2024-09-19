@@ -1,0 +1,5 @@
+.card-img-top {
+    width: auto;
+    height: 200px; /* ปรับความสูงของรูปภาพ */
+    object-fit: cover; /* ปรับรูปภาพให้พอดีกับกรอบ */
+}

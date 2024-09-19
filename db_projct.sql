@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2024 at 04:19 PM
+-- Generation Time: Sep 19, 2024 at 09:18 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,38 +28,50 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tblproducts` (
-  `id` int(10) NOT NULL,
-  `name` varchar(200) NOT NULL,
-  `price` int(50) NOT NULL,
-  `postingdate` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text DEFAULT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblproducts`
 --
 
-INSERT INTO `tblproducts` (`id`, `name`, `price`, `postingdate`) VALUES
-(2, 'test1', 10, '2024-09-18 14:03:06'),
-(3, 'test2', 20, '2024-09-18 14:03:06'),
-(4, 'test3', 30, '2024-09-18 14:03:06'),
-(5, 'test4', 40, '2024-09-18 14:03:06'),
-(6, 'test5', 50, '2024-09-18 14:03:30'),
-(7, 'test6', 60, '2024-09-18 14:03:30'),
-(8, 'test7', 70, '2024-09-18 14:04:47'),
-(9, 'test8', 80, '2024-09-18 14:04:47'),
-(10, 'test9', 90, '2024-09-18 14:04:47'),
-(11, 'test10', 100, '2024-09-18 14:04:47'),
-(12, 'test11', 110, '2024-09-18 14:04:47'),
-(13, 'test12', 120, '2024-09-18 14:04:47'),
-(14, 'test13', 130, '2024-09-18 14:04:47'),
-(15, 'test14', 140, '2024-09-18 14:04:47'),
-(16, 'test15', 150, '2024-09-18 14:04:47'),
-(17, 'test16', 160, '2024-09-18 14:04:47'),
-(18, 'test17', 170, '2024-09-18 14:04:47'),
-(19, 'test18', 180, '2024-09-18 14:04:47'),
-(20, 'test19', 190, '2024-09-18 14:04:47'),
-(21, 'test20', 200, '2024-09-18 14:04:47'),
-(22, 'test21', 210, '2024-09-18 14:04:47');
+INSERT INTO `tblproducts` (`id`, `name`, `description`, `price`, `image`) VALUES
+(2, 'test', 'no description', 20.00, 'itstore.png'),
+(3, 'test', 'no description', 30.00, 'itstore.png'),
+(4, 'test', 'no description', 40.00, 'itstore.png'),
+(5, 'test', 'no description', 50.00, 'itstore.png'),
+(6, 'test', 'no description', 60.00, 'itstore.png'),
+(7, 'test', 'no description', 70.00, 'itstore.png'),
+(8, 'test', 'no description', 80.00, 'itstore.png'),
+(9, 'test', 'no description', 90.00, 'itstore.png'),
+(10, 'test', 'no description', 100.00, 'itstore.png'),
+(11, 'test', 'no description', 110.00, 'itstore.png'),
+(12, 'test', 'no description', 120.00, 'itstore.png'),
+(13, 'test', 'no description', 130.00, 'itstore.png'),
+(14, 'test', 'no description', 140.00, 'itstore.png'),
+(15, 'test', 'no description', 150.00, 'itstore.png'),
+(16, 'test', 'no description', 160.00, 'itstore.png'),
+(17, 'test', 'no description', 170.00, 'itstore.png'),
+(18, 'test', 'no description', 180.00, 'itstore.png'),
+(19, 'test', 'no description', 190.00, 'itstore.png'),
+(20, 'test', 'no description', 200.00, 'itstore.png'),
+(21, 'test', 'no description', 210.00, 'itstore.png'),
+(22, 'test', 'no description', 220.00, 'itstore.png'),
+(23, 'test', 'no description', 230.00, 'itstore.png'),
+(24, 'test', 'no description', 240.00, 'itstore.png'),
+(25, 'test', 'no description', 250.00, 'itstore.png'),
+(26, 'test', 'no description', 260.00, 'itstore.png'),
+(27, 'test', 'no description', 270.00, 'itstore.png'),
+(28, 'test', 'no description', 280.00, 'itstore.png'),
+(29, 'test', 'no description', 290.00, 'itstore.png'),
+(30, 'test', 'no description', 300.00, 'itstore.png'),
+(31, 'test', 'no description', 310.00, 'itstore.png'),
+(32, 'test', 'no description', 320.00, 'itstore.png'),
+(33, 'test', 'no description', 330.00, 'itstore.png');
 
 -- --------------------------------------------------------
 
@@ -85,10 +97,9 @@ CREATE TABLE `tblusers` (
 
 INSERT INTO `tblusers` (`id`, `firstname`, `lastname`, `email`, `phonenumber`, `address`, `postingdate`, `username`, `password`) VALUES
 (1, 'Athip', 'Praneewat', 'athip.pra@gmail.com', '0968743839', '111 test long address test 72000', '2024-09-17 15:43:04', 'cza', '12'),
-(3, 'user1', 'test1', 'user1@gmail.com', '0934560913', '11111 thai 70000', '2024-09-17 18:28:16', 'user1', '12'),
 (4, 'user2', 'test2', 'user2@gmail.com', '0934565401', '11', '2024-09-17 19:05:05', 'user2', '22'),
 (5, 'user3', 'test3', 'user3@gmail.com', '09345619272', '111', '2024-09-17 19:10:48', 'user3', '33'),
-(6, 'user3', 'test3', 'user3@gmail.com', '09345619272', '111', '2024-09-17 19:10:48', 'user3', '33');
+(6, 'user3', 'test3', 'user3@gmail.com', '09345619272', '111', '2024-09-17 19:10:48', 'user4', '44');
 
 --
 -- Indexes for dumped tables
@@ -114,7 +125,7 @@ ALTER TABLE `tblusers`
 -- AUTO_INCREMENT for table `tblproducts`
 --
 ALTER TABLE `tblproducts`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tblusers`
