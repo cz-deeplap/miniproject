@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>จัดการ padding width height ตามขนาดจอ</h1>
+    <h1> - จัดการ padding width height ตามขนาดจอ</h1>
+    <h1> - ทำการบ้านเรื่องอัพขึ้นเซริฟ</h1>
 </body>
 </html>
