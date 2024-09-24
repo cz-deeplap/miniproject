@@ -63,8 +63,7 @@ $productsResult = $conn->query("SELECT * FROM tblproducts");
 </head>
 <body>
 <div class="container">
-    <h1 class="information-heading">Manage Product</h1>
-    <hr>
+
     <table id="mytable" class="table">
         <thead class="table-dark">
             <tr style="text-align: center;">

@@ -16,9 +16,27 @@
             }
         }
 
-        public function insert($firstname, $lastname, $email, $phonenumber, $address, $username , $password) {
-            $result = mysqli_query($this->dbcon, "INSERT INTO tblusers (firstname, lastname, email, phonenumber, address, username ,password) VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$address', '$username', '$password')");
-            return $result;
+        public function insert($firstname, $lastname, $email, $phonenumber, $address, $username, $password, $image) {
+            // กำหนดเส้นทางสำหรับบันทึกรูปภาพ
+            $target_dir = "uploads/";
+            $target_file = $target_dir . basename($image["name"]);
+            
+            // ตรวจสอบประเภทไฟล์
+            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+            $allowed_types = ['jpg', 'png', 'jpeg', 'gif'];
+        
+            if (in_array($imageFileType, $allowed_types)) {
+                // อัปโหลดไฟล์
+                if (move_uploaded_file($image["tmp_name"], $target_file)) {
+                    // บันทึกข้อมูลในฐานข้อมูล
+                    $result = mysqli_query($this->dbcon, "INSERT INTO tblusers (firstname, lastname, email, phonenumber, address, username, password, image) VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$address', '$username', '$password', '$target_file')");
+                    return $result;
+                } else {
+                    return false; // อัปโหลดไฟล์ไม่สำเร็จ
+                }
+            } else {
+                return false; // ประเภทไฟล์ไม่อนุญาต
+            }
         }
         
 
@@ -32,20 +50,31 @@
             return $result;
         }
 
-        public function update($firstname, $lastname, $email, $phonenumber, $address ,$userid ,$username , $password) {
-            $result = mysqli_query($this->dbcon, "UPDATE tblusers SET 
-            firstname = '$firstname', 
-            lastname = '$lastname',
-            email = '$email',
-            phonenumber = '$phonenumber',
-            address = '$address',
-            username = '$username',
-            password = '$password'    
-            WHERE id = '$userid'
-            ");
+        public function update($firstname, $lastname, $email, $phonenumber, $address, $userid, $username, $password, $image) {
+            if ($image) {
+                $result = mysqli_query($this->dbcon, "UPDATE tblusers SET 
+                firstname = '$firstname', 
+                lastname = '$lastname',
+                email = '$email',
+                phonenumber = '$phonenumber',
+                address = '$address',
+                username = '$username',
+                password = '$password',
+                image = '$image'    
+                WHERE id = '$userid'");
+            } else {
+                $result = mysqli_query($this->dbcon, "UPDATE tblusers SET 
+                firstname = '$firstname', 
+                lastname = '$lastname',
+                email = '$email',
+                phonenumber = '$phonenumber',
+                address = '$address',
+                username = '$username',
+                password = '$password'    
+                WHERE id = '$userid'");
+            }
             return $result; 
-
-        } 
+        }        
 
         public function delete($userid) {
             $deleterecord = mysqli_query($this->dbcon, "DELETE FROM tblusers  WHERE id = '$userid'");

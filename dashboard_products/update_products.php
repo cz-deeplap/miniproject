@@ -134,8 +134,7 @@ $conn->close();
 </head>
 <body>
 <div class="container">
-    <h1 class="information-heading" style="font-size: 34px;">Update Product</h1>
-    <hr>
+
     <form method="POST" action="" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo isset($product) ? htmlspecialchars($product['id']) : ''; ?>">
 
@@ -162,8 +161,8 @@ $conn->close();
             <?php endif; ?>
         </div>
 
-        <button type="submit" class="btn btn-primary"><?php echo $id ? "Update" : "Add"; ?> Product</button>
-        <a href="index.php?p=dashboard_products/edit_products" class="btn btn-secondary">Back to Manage</a>
+        <button type="submit" class="btn btn-success"><?php echo $id ? "Update" : "Add"; ?> Product</button>
+        <a href="index.php?p=dashboard_products/edit_products" class="btn btn-primary">Back to Manage</a>
     </form>
 </div>
 

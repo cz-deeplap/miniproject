@@ -11,8 +11,9 @@ if (isset($_POST['insert'])) {
     $address = $_POST['address'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $image = $_FILES['image']; // รับข้อมูลไฟล์ภาพ
 
-    $sql = $insertdata->insert($fname, $lname, $email, $phonenumber, $address ,$username ,$password);
+    $sql = $insertdata->insert($fname, $lname, $email, $phonenumber, $address, $username, $password, $image);
 
     if ($sql) {
         echo "<script>alert('Record Inserted Successfully!');</script>";
@@ -22,7 +23,9 @@ if (isset($_POST['insert'])) {
         echo "<script>window.location.href='index.php?p=dashboard_user/insertuser'</script>";
     }
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +48,23 @@ if (isset($_POST['insert'])) {
             <div class="card-body register-card-body">
                 <p class="login-box-msg">Register a new membership</p>
 
-                <form action="" method="post">
+                <form action="" method="post" enctype="multipart/form-data">    
+                <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="username" placeholder="Username" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" name="firstname" placeholder="First Name" required>
                         <div class="input-group-append">
@@ -82,20 +101,7 @@ if (isset($_POST['insert'])) {
                         <textarea name="address" class="form-control" placeholder="Address" rows="3" required></textarea>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="username" placeholder="Username" required>
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-user"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Password" required>
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
+                    <input type="file" class="form-control" name="image" accept="image/*" required="" style="padding: 7.1px;height: 45px;">
                     </div>
                     <div class="row">
                         <div class="col-8">

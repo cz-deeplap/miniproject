@@ -24,9 +24,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-    <h1 class="information-heading-1">List products</h1>
-    <hr>
+    <div class="container" style="min-height: 633.4px;padding: 30px 30px 0px 30px;" > 
         <div class="row">
             <?php while($row = $result->fetch_assoc()): ?>
                 <div class="col-md-3 mb-4">

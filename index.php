@@ -120,13 +120,13 @@
                 <ion-icon name="bag-outline"></ion-icon>
                   <p>List Product</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?p=dashboard_user/showuser" class="nav-link ">
-                <ion-icon name="people-outline"></ion-icon>
-                  <p>List Users</p>
+            </li>
+            <li class="nav-item">
+                <a href="index.php?p=draft" class="nav-link ">
+                <ion-icon name="man-outline"></ion-icon>
+                  <p>วางแผนครั้งต่อไป</p>
                 </a>
-              </li>
+            </li>
             </ul>
           </li>
 
