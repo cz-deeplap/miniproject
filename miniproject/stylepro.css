@@ -1,0 +1,21 @@
+.card-img-top {
+    width: auto;
+    height: 200px; /* ปรับความสูงของรูปภาพ */
+    object-fit: cover; /* ปรับรูปภาพให้พอดีกับกรอบ */
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 100%; /* หรือขนาดที่ต้องการ */
+    }
+    .container-lg {
+        max-width: 100%; /* ขนาดที่ต้องการ */
+    }
+    .container-md {
+        max-width: 100%; /* ขนาดที่ต้องการ */
+    }
+    .container-sm {
+        max-width: 100%; /* ขนาดที่ต้องการ */
+    }
+}
+

@@ -1,0 +1,19 @@
+
+body {
+    background-color: #e9ecef;
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 100%; /* หรือขนาดที่ต้องการ */
+    }
+    .container-lg {
+        max-width: 100%; /* ขนาดที่ต้องการ */
+    }
+    .container-md {
+        max-width: 100%; /* ขนาดที่ต้องการ */
+    }
+    .container-sm {
+        max-width: 100%; /* ขนาดที่ต้องการ */
+    }
+}
