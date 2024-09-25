@@ -8,12 +8,11 @@ if (isset($_POST['insert'])) {
     $lname = $_POST['lastname'];
     $email = $_POST['email'];
     $phonenumber = $_POST['phonenumber'];
-    $address = $_POST['address'];
     $username = $_POST['username'];
     $password = $_POST['password'];
     $image = $_FILES['image']; // รับข้อมูลไฟล์ภาพ
 
-    $sql = $insertdata->insert($fname, $lname, $email, $phonenumber, $address, $username, $password, $image);
+    $sql = $insertdata->insert($fname, $lname, $email, $phonenumber, $username, $password, $image);
 
     if ($sql) {
         echo "<script>alert('Record Inserted Successfully!');</script>";
@@ -96,9 +95,6 @@ if (isset($_POST['insert'])) {
                                 <span class="fas fa-phone"></span>
                             </div>
                         </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <textarea name="address" class="form-control" placeholder="Address" rows="3" required></textarea>
                     </div>
                     <div class="input-group mb-3">
                     <input type="file" class="form-control" name="image" accept="image/*" required="" style="padding: 7.1px;height: 45px;">

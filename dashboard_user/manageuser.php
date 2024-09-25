@@ -25,10 +25,9 @@ $sql = $fetchdata->fetchdata();
                     <p><strong>Name : </strong><?php echo htmlspecialchars($row['firstname']); ?> <?php echo htmlspecialchars($row['lastname']); ?></p> 
                     <p><strong>Email : </strong><?php echo htmlspecialchars($row['email']); ?></p>
                     <p><strong>Tel : </strong><?php echo htmlspecialchars($row['phonenumber']); ?></p>
-                    <p><strong>Address : </strong><?php echo htmlspecialchars($row['address']); ?></p>
                 </div>
                 <div class="user-actions">
-                    <a style="width: 510px; font-size: 18px;" href="index.php?p=dashboard_user/updateuser&id=<?php echo $row['id']; ?>" class="btn btn-dark">Edit</a>
+                    <a style="width: 435px; font-size: 18px;" href="index.php?p=dashboard_user/updateuser&id=<?php echo $row['id']; ?>" class="btn btn-dark">Edit</a>
                 </div>
             </div>
         <?php } ?>

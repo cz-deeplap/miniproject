@@ -8,7 +8,6 @@ if (isset($_POST['update'])) {
     $lname = $_POST['lastname'];
     $email = $_POST['email'];
     $phonenumber = $_POST['phonenumber'];
-    $address = $_POST['address'];
     $username = $_POST['username'];
     $password = $_POST['password'];
     
@@ -28,13 +27,13 @@ if (isset($_POST['update'])) {
 
         // หากไม่ผ่านการตรวจสอบ
         if ($uploadOk == 1 && move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-            $sql = $updatedata->update($fname, $lname, $email, $phonenumber, $address, $userid, $username, $password, $target_file);
+            $sql = $updatedata->update($fname, $lname, $email, $phonenumber, $userid, $username, $password, $target_file);
         } else {
             echo "<script>alert('Sorry, there was an error uploading your file.');</script>";
         }
     } else {
         // หากไม่มีการอัปโหลดภาพให้ใช้ค่าก่อนหน้า
-        $sql = $updatedata->update($fname, $lname, $email, $phonenumber, $address, $userid, $username, $password, null);
+        $sql = $updatedata->update($fname, $lname, $email, $phonenumber, $userid, $username, $password, null);
     }
 
     if ($sql) {
@@ -65,6 +64,14 @@ if (isset($_POST['update'])) {
         ?>
 
         <form action="" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" value="<?php echo htmlspecialchars($row['username']); ?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" value="<?php echo htmlspecialchars($row['password']); ?>" required>
+            </div>
             <div class="mb-3">
                 <label for="firstname" class="form-label">Firstname</label>
                 <input type="text" class="form-control" name="firstname" value="<?php echo htmlspecialchars($row['firstname']); ?>" required>
@@ -80,18 +87,6 @@ if (isset($_POST['update'])) {
             <div class="mb-3">
                 <label for="phonenumber" class="form-label">Phone Number</label>
                 <input type="text" class="form-control" name="phonenumber" value="<?php echo htmlspecialchars($row['phonenumber']); ?>" required>
-            </div>
-            <div class="mb-3">
-                <label for="address" class="form-label">Address</label>
-                <textarea name="address" cols="30" rows="10" class="form-control" style="height: 130px; padding: 10px;" required><?php echo htmlspecialchars($row['address']); ?></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" value="<?php echo htmlspecialchars($row['username']); ?>" required>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" name="password" value="<?php echo htmlspecialchars($row['password']); ?>" required>
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
